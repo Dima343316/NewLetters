@@ -14,5 +14,9 @@ services:
     env_file:
       - .env
     restart: always
+    networks:
+      - streamlit_network
 
-
+networks:
+  streamlit_network:
+    driver: bridge
