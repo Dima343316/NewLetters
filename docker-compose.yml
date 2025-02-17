@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  streamlit-app:
+    build: .
+    container_name: streamlit-app
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_TOKEN_API=${OPENAI_TOKEN_API}
+      - BASE_OPENAI_URL=${BASE_OPENAI_URL}
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    restart: always
+
+
