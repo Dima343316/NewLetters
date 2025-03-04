@@ -20,5 +20,6 @@ RUN apt-get update && apt-get install -y libpq-dev
 EXPOSE 8501
 
 # Определяем команду для запуска Streamlit приложения
-CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.enableCORS=false", "--server.enableXsrfProtection=false"]
+CMD ["streamlit", "run", "main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+
 
